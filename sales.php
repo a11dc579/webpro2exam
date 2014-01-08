@@ -8,24 +8,40 @@
 <body>
 <p>商品一覧</p><p>売上一覧</p>
 <p>&nbsp;</p>
-<h1>商品詳細</h1>
-<p>購入数を入力して、購入ボタンを押してください。</p>
-<p>商品名</p>
-<p>価格</p>
-<p>購入数</p>
-<form name="form2" method="post" action="">
-  <label for="textfield"></label>
-  <input type="text" name="textfield" id="textfield">
-</form>
+<h1>売上一覧</h1>
+これまでに購入された商品の一覧です。
+<table width="791" border="1">
+  <tr>
+    <th width="61" scope="col">日時</th>
+    <th width="241" scope="col">商品名</th>
+    <th width="193" scope="col">個数</th>
+    <th width="268" scope="col">合計（個数＊単価）</th>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
 
-<form name="form1" method="post" action="">
-
-  <input type="submit" name="return" id="return" value="戻る">
-  <input type="submit" name="buy" id="return" value="購入する">
-</form>
-<p>&nbsp;</p>
-
-
-<p>&nbsp;</p>
 </body>
 </html>
