@@ -1,4 +1,4 @@
-mysql -u root -h 127.0.0.1
+ï»¿mysql -u root -h 127.0.0.1
 
 create database webpro2exam default character set utf8;
 
@@ -8,11 +8,11 @@ create table Sales(ID INT, product_id INT, sales_at DATETIME,quantity INT);
 
 
 INSERT INTO products (id, name, price) VALUES
-    (1, '‚Ó‚Æ‚ñƒNƒŠ[ƒi[', 28800),
-    (2, 'ƒ_ƒCƒ\ƒ“ƒR[ƒhƒŒƒXƒNƒŠ[ƒi[', 47610),
-    (3, 'ƒƒ{ƒbƒg‘|œ‹@', 51500),
-    (4, 'ƒuƒ‰ƒU[ƒRƒ“ƒsƒ…[ƒ^ƒ~ƒVƒ“', 18900),
-    (5, '–Ñ‹ÊŽæ‚èŠí', 2480),
-    (6, '‚Ó‚Æ‚ñê—pƒ_ƒjƒNƒŠ[ƒi[', 17800),
-    (7, '‘SŽ©“®ô‘ó‹@', 55000),
-    (8, 'ƒR[ƒhƒŒƒXƒAƒCƒƒ“', 5980);
+    (1, 'ãµã¨ã‚“ã‚¯ãƒªãƒ¼ãƒŠãƒ¼', 28800),
+    (2, 'ãƒ€ã‚¤ã‚½ãƒ³ã‚³ãƒ¼ãƒ‰ãƒ¬ã‚¹ã‚¯ãƒªãƒ¼ãƒŠãƒ¼', 47610),
+    (3, 'ãƒ­ãƒœãƒƒãƒˆæŽƒé™¤æ©Ÿ', 51500),
+    (4, 'ãƒ–ãƒ©ã‚¶ãƒ¼ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ã‚¿ãƒŸã‚·ãƒ³', 18900),
+    (5, 'æ¯›çŽ‰å–ã‚Šå™¨', 2480),
+    (6, 'ãµã¨ã‚“å°‚ç”¨ãƒ€ãƒ‹ã‚¯ãƒªãƒ¼ãƒŠãƒ¼', 17800),
+    (7, 'å…¨è‡ªå‹•æ´—æ¿¯æ©Ÿ', 55000),
+    (8, 'ã‚³ãƒ¼ãƒ‰ãƒ¬ã‚¹ã‚¢ã‚¤ãƒ­ãƒ³', 5980);
