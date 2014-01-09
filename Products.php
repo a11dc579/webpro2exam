@@ -1,13 +1,29 @@
 <?php
-
+$id = $_GET['id']+1;
 
 try {
     $pdo = new PDO('mysql:host=localhost;dbname=webpro2exam;charset=utf8;', 'root', '');
-   	echo "接続成功<br />";
+
    }    
    catch (PDOException $e) {
     var_dump($e->getMessage());
 }
+
+$sth = $pdo->prepare("select * from products where id=$id");
+$sth->execute();
+$result = $sth->fetchAll();
+
+foreach($result as $key=>$array){
+	
+	echo "<br />";
+
+	$proID=$array["ID"];
+	$proName=$array["name"];
+	$proPrice=$array["price"];
+	echo "<br />";
+}
+
+?>
 
 
 ?>
@@ -21,30 +37,26 @@ try {
 
 <body>
 <p>商品一覧</p><p>売上一覧</p>
-<p>&nbsp;</p>
+
 <h1>商品詳細</h1>
 <p>購入数を入力して、購入ボタンを押してください。</p>
-<p>商品名</p>
-<?php
-$id = $_GET['id'];
-echo $id ;
 
-?>
+<p>商品名</p>
+<?php echo $proName;?>
+
 <p>価格</p>
+<?php echo $proPrice;?>
+
 <p>購入数</p>
 <form name="form2" method="post" action="">
   <label for="textfield"></label>
   <input type="text" name="textfield" id="textfield">
 </form>
 
-<form name="form1" method="post" action="">
 
   <input type="submit" name="return" id="return" value="戻る">
   <input type="submit" name="buy" id="return" value="購入する">
 </form>
-<p>&nbsp;</p>
 
-
-<p>&nbsp;</p>
 </body>
 </html>

@@ -18,7 +18,7 @@ $result = $sth->fetchAll();
 /*print_r($result);*/
 
 foreach($result as $key1=>$value1){
-	$key=$key1+1;
+	$key=$key1;
 /*	echo $key;*/
 	foreach($value1 as $key2=>$value2){
 	/*		echo '$key2:';
