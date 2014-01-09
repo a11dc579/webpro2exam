@@ -14,19 +14,16 @@ $sth->execute();
 $result = $sth->fetchAll();
 
 foreach($result as $key=>$array){
-	
-	echo "<br />";
-
 	$proID=$array["ID"];
 	$proName=$array["name"];
 	$proPrice=$array["price"];
-	echo "<br />";
+
 }
 
 ?>
 
 
-?>
+
 
 <!DOCTYPE HTML>
 <html>
@@ -48,15 +45,13 @@ foreach($result as $key=>$array){
 <?php echo $proPrice;?>
 
 <p>購入数</p>
-<form name="form2" method="post" action="">
-  <label for="textfield"></label>
-  <input type="text" name="textfield" id="textfield">
+ <form name="form2" method="post" action="products_controller.php">
+	<input type="text" name="each">
+	<input type="submit" name="buy" id="buy" value="購入する">
 </form>
 
-
-  <input type="submit" name="return" id="return" value="戻る">
-  <input type="submit" name="buy" id="return" value="購入する">
+<form name="form2" method="post" action="index.php">
+	<input type="submit" name="return" id="return"value="戻る">
 </form>
-
 </body>
 </html>
