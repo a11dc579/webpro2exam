@@ -25,6 +25,11 @@ try {
 <h1>商品詳細</h1>
 <p>購入数を入力して、購入ボタンを押してください。</p>
 <p>商品名</p>
+<?php
+$id = $_GET['id'];
+echo $id ;
+
+?>
 <p>価格</p>
 <p>購入数</p>
 <form name="form2" method="post" action="">

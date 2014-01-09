@@ -1,8 +1,8 @@
 ﻿<?php
-
+function getdata(){
 try {
     $pdo = new PDO('mysql:host=localhost;dbname=webpro2exam;charset=utf8;', 'root', '');
-   	echo "接続成功<br />";
+
    }    
    catch (PDOException $e) {
     var_dump($e->getMessage());
@@ -18,17 +18,28 @@ $result = $sth->fetchAll();
 /*print_r($result);*/
 
 foreach($result as $key1=>$value1){
-/*	print_r($value1);*/
-	echo "<br />";
-		foreach($value1 as $key2=>$value2){
-			/*print_r($value2);*/
-			$value=$value2;
+	$key=$key1+1;
+/*	echo $key;*/
+	foreach($value1 as $key2=>$value2){
+	/*		echo '$key2:';
+			echo $key2;
 			echo "<br />";
+			echo '$value2:';
+			echo $value2;*/
 			
+			if($key2==="name"){
+			echo "<li><a href="."products.php?id=$key".">";
+
+			echo $value2;
+			echo "</a></li>";
+			}
+		
 	}
 
 	}
-print_r($value);
+	$pdo = null;
+}
+
 ?>
 
 
@@ -46,6 +57,15 @@ print_r($value);
 <h1>商品一覧</h1>
 <p>購入したい商品を選択してください</p>
 <form action="Products.php" method="post">
+<ul class="products">
+<?php
+
+getdata();
+
+?>
+ </ul>
+</form>
+<!--<form action="Products.php" method="post">
 
         <ul class="products">
           <li><a href="products.php" name="1">ふとんクリーナー</a></li>
@@ -58,7 +78,7 @@ print_r($value);
           <li><a href="products.php" name="8">コードレスアイロン</a></li>
         </ul>
 
-</form>
+</form>-->
 
 </body>
 </html>
