@@ -1,3 +1,18 @@
+<?php
+
+	
+/*方法 bindParam() 和 bindParam() 非常相似。
+唯一的区别就是前者使用一个PHP变量绑定参数，而后者使用一个值。*/
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=webpro2exam;charset=utf8;', 'root', '');//调用 PDO 构造方法（连接数据库）
+   	echo "接続成功<br />";
+   }    
+   catch (PDOException $e) {
+    var_dump($e->getMessage());
+}
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>

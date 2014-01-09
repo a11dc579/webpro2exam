@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -10,15 +15,19 @@
 <p>&nbsp;</p>
 <h1>商品一覧</h1>
 <p>購入したい商品を選択してください</p>
-<ul>
-  <li>ふとんクリーナー</li>
-  <li>ダイソコードレスクリーナー</li>
-  <li>ロポット掃除機</li>
-  <li>ブラザーコンピュータミシン</li>
-  <li>毛玉取り器</li>
-  <li>ふとん専用ダニクリーナー</li>
-  <li>全自動洗濯機</li>
-  <li>コードレスアイロン</li>
-</ul>
+
+        <ul class="products">
+          <li><a href="product.php" name="1">ふとんクリーナー</a></li>
+          <li><a href="product.php" name="2">ダイソンコードレスクリーナー</a></li>
+          <li><a href="product.php" name="3" >ロボット掃除機</a></li>
+          <li><a href="product.php" name="4">ブラザーコンピュータミシン</a></li>
+          <li><a href="product.php" name="5">毛玉取り器</a></li>
+          <li><a href="product.php" name="6">ふとん専用ダニクリーナー</a></li>
+          <li><a href="product.php" name="7">全自動洗濯機</a></li>
+          <li><a href="product.php" name="8">コードレスアイロン</a></li>
+        </ul>
+
+
+
 </body>
 </html>
