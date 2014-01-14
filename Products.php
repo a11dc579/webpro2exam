@@ -1,5 +1,6 @@
 <?php
 $id = $_GET['id']+1;
+echo $id;
 
 try {
     $pdo = new PDO('mysql:host=localhost;dbname=webpro2exam;charset=utf8;', 'root', '');
@@ -33,7 +34,7 @@ foreach($result as $key=>$array){
 </head>
 
 <body>
-<p>商品一覧</p><p>売上一覧</p>
+<p><a href="index.php">商品一覧</a></p><p><a href="sales.php">売上一覧</a></p>
 
 <h1>商品詳細</h1>
 <p>購入数を入力して、購入ボタンを押してください。</p>
@@ -45,9 +46,9 @@ foreach($result as $key=>$array){
 <?php echo $proPrice;?>
 
 <p>購入数</p>
- <form name="form2" method="post" action="products_controller.php">
+ <form name="form2" method="post" action="products_controller.php<?php echo "?id=$id ";?>">
 	<input type="text" name="each">
-	<input type="submit" name="buy" id="buy" value="購入する">
+	<input type="submit" name="buy" value="購入する" onDblClick="">
 </form>
 
 <form name="form2" method="post" action="index.php">

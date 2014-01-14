@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<p>商品一覧</p><p>売上一覧</p>
+<p><a href="index.php">商品一覧</a></p><p><a href="sales.php">売上一覧</a></p>
 <p>&nbsp;</p>
 <h1>売上一覧</h1>
 これまでに購入された商品の一覧です。
