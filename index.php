@@ -1,21 +1,10 @@
 ﻿<?php
+
 function getdata(){
-try {
-    $pdo = new PDO('mysql:host=localhost;dbname=webpro2exam;charset=utf8;', 'root', '');
-
-   }    
-   catch (PDOException $e) {
-    var_dump($e->getMessage());
-}
-
-
-
-
+require_once('other/pdo.php');
 $sth = $pdo->prepare('select name from products');
 $sth->execute();
 $result = $sth->fetchAll();
-
-
 
 foreach($result as $key1=>$value1){
 	$key=$key1;
@@ -37,8 +26,6 @@ foreach($result as $key1=>$value1){
 }
 
 ?>
-
-
 
 <!DOCTYPE HTML>
 <html>

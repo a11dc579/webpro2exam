@@ -1,12 +1,7 @@
 ﻿<?php
+require_once('other/utils.php');
+require_once('other/pdo.php');
 
-try {
-    $pdo = new PDO('mysql:host=localhost;dbname=webpro2exam;charset=utf8;', 'root', '');
-
-   }    
-   catch (PDOException $e) {
-    var_dump($e->getMessage());
-}
 
 $res = $pdo->prepare('select count(*) from sales');
 $res->execute();
@@ -22,18 +17,11 @@ foreach ($result as $key1=>$value1){
 }
 
 
-echo "IDは".$id;
-
 $product_id = $_GET['id'];
 
 $quantity=$_POST["each"];
-echo "買い上げ数は".$quantity;echo "<br />";
 
 $sales_at=date('Y-m-d H:i:s',time());
-echo "時間は".$sales_at;
-
-echo "<br />";
-echo "product_idは".$product_id;
 
 $salesdata = $pdo -> prepare("INSERT INTO sales (ID,product_id,sales_at,quantity) VALUES (:ID,:product_id,:sales_at,:quantity)");
 

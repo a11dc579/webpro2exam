@@ -2,13 +2,7 @@
 $id = $_GET['id']+1;
 echo $id;
 
-try {
-    $pdo = new PDO('mysql:host=localhost;dbname=webpro2exam;charset=utf8;', 'root', '');
-
-   }    
-   catch (PDOException $e) {
-    var_dump($e->getMessage());
-}
+require_once('other/pdo.php');
 
 $sth = $pdo->prepare("select * from products where id=$id");
 $sth->execute();
