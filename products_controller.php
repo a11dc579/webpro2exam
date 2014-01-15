@@ -1,9 +1,5 @@
 ﻿<?php
 
-$quantity=$_POST["each"];
-
-echo "買い上げ数は".$quantity;
-
 try {
     $pdo = new PDO('mysql:host=localhost;dbname=webpro2exam;charset=utf8;', 'root', '');
 
@@ -25,26 +21,30 @@ foreach ($result as $key1=>$value1){
 		}
 }
 
+
 echo "IDは".$id;
+
 $product_id = $_GET['id'];
+
 $quantity=$_POST["each"];
 echo "買い上げ数は".$quantity;echo "<br />";
-echo date('Y-m-d H:i',time());
+
+$sales_at=date('Y-m-d H:i:s',time());
+echo "時間は".$sales_at;
+
 echo "<br />";
 echo "product_idは".$product_id;
-$salesdata = $pdo -> prepare("INSERT INTO sales (ID,product_id,quantity) VALUES (:ID,:product_id,:quantity)");
 
-$salesdata->bindParam(':ID', $id,PDO::PARAM_STR);
-$salesdata->bindParam(':product_id',$product_id,PDO::PARAM_STR);
-$salesdata->bindParam(':sales_at',$_POST["sales_at"], PDO::PARAM_STR);
-$salesdata->bindParam(':quantity',$quantity,	PDO::PARAM_STR);
+$salesdata = $pdo -> prepare("INSERT INTO sales (ID,product_id,sales_at,quantity) VALUES (:ID,:product_id,:sales_at,:quantity)");
 
+$salesdata->bindParam(':ID', 				$id,				PDO::PARAM_STR);
+$salesdata->bindParam(':product_id',	$product_id,	PDO::PARAM_STR);
+$salesdata->bindParam(':sales_at',		$sales_at, 		PDO::PARAM_STR);
+$salesdata->bindParam(':quantity',		$quantity,		PDO::PARAM_STR);
 $salesdata->execute();
 
+$salesdata=null;
 
-
-$pdo = null;
-
-
+redirect_to('sales.php');
 
 ?>
